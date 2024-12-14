@@ -127,6 +127,8 @@ export class UserComponent implements OnInit {
 
         this.activeHtmlPagination()
 
+        this.generatePaginationById()
+
       },
       error: () => {
         console.error('При запросе на сервер, произошла какая та ошибка 1')
