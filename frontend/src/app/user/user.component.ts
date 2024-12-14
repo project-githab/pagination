@@ -49,7 +49,7 @@ export class UserComponent implements OnInit {
   idPath: number = 0;
 
   // Если главная страница, а это первая страниц, то ссылка на первую страница не работает.
-  firstPageAddress: string = '/user/1'
+  firstPageAddress: string = '/posts/1'
 
   // Устанавливает стиль на первую страницу. Если страница первая, то true, окрашивает кнопку, иначе false
   // окрашивает в другой цвет.
@@ -86,7 +86,7 @@ export class UserComponent implements OnInit {
   httpRouterInit() {
 
     // Проверяем имеется ли ID в строке браузера
-    if (!this.router.url.includes('/user/')) {
+    if (!this.router.url.includes('/posts/')) {
 
 
       // На главной странице кнопка вперёд сразу переходит на вторую страницу, так как главная страница это первая страница
