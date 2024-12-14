@@ -1,0 +1,59 @@
+@for (ads of ads; track ads.id) {
+
+  <div class="content">
+    {{ ads.id }}
+    {{ ads.name }}
+    {{ ads.age }}
+  </div>
+
+}
+
+
+@if (activePagination) {
+
+  <div class="pagination">
+
+    @if (buttonBack) {
+      <a class="pagination-number" routerLink="/user/{{idPath -1}}"> << </a>
+    }
+
+
+    <a [ngClass]="{'pagination-active': buttonStyleFirstPage, 'pagination-next': !buttonStyleFirstPage}"
+       routerLink="{{firstPageAddress}}">1</a>
+
+
+    <!--    Пагинация-->
+
+    @for (item of paginationId; track $index) {
+
+      @if (item === idPath) {
+        <div><a [ngClass]="'pagination-active'" routerLink="/user/{{item}}">{{ item }}</a></div>
+      } @else {
+        <div><a [ngClass]="'pagination-number'" routerLink="/user/{{item}}">{{ item }}</a></div>
+      }
+
+    }
+
+    <!--    Пагинация-->
+
+
+
+    @if (idPath === totalPages) {
+      <a [ngClass]="'pagination-active'" routerLink="/user/{{totalPages}}">{{ totalPages }}</a>
+    } @else {
+      <a [ngClass]="'pagination-next'" routerLink="/user/{{totalPages}}">{{ totalPages }}</a>
+    }
+
+
+    @if (buttonNext) {
+
+      <a class="pagination-number" routerLink="/user/{{idPath +1}}"> >> </a>
+
+    }
+
+
+  </div>
+
+}
+
+
