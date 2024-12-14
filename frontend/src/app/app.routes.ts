@@ -1,10 +1,9 @@
-import {Routes} from '@angular/router';
-import {AppComponent} from './app.component';
-import {UserComponent} from './user/user.component';
+import { Routes } from '@angular/router';
+import {PostsComponent} from './posts/posts.component';
 
 export const routes: Routes = [
 
-  {path: '', component: UserComponent, title: 'Главная страница'},
-  {path: 'posts/:pageId', component: UserComponent, pathMatch: 'full', title: 'Пользователи'}
+  {path: '', component: PostsComponent, title: 'Главная страница'},
+  {path: 'posts/:pageId', component: PostsComponent, pathMatch: 'full', title: 'Пользователи'}
 
 ];
